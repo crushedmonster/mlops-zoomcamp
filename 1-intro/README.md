@@ -20,7 +20,7 @@ jupyter notebook
 - Install the official Docker for Desktop from the website (https://docs.docker.com/docker-for-windows/install/)
 
 ### Create a virtual conda environment
-Ensure Anaconda that is installed. For this coursework, I'm using virtual conda environment to avoid any dependencies conflicts on my local.
+Ensure Anaconda that is installed. For this coursework, I'm using virtual conda environment to avoid any dependencies conflict on my local.
 
 ```sh
 # Create a new Conda environment
