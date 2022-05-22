@@ -36,3 +36,6 @@ conda install jupyter
 The New York taxi dataset for this module is downloaded from: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 - Download Green Taxi Trip Records for January and February 2021 
 - Download For-Hire Vehicle Trip Records for January and February 2021 (This is used to complete the homework)
+
+## Homework
+My solution can be found here: [homework.ipynb](https://github.com/crushedmonster/mlops-zoomcamp/blob/main/1-intro/homework.ipynb)
