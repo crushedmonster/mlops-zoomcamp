@@ -10,7 +10,7 @@ Free MLOps course from [DataTalks.Club](https://datatalks.club/)
 - Environment preparation
 - Homework
 
-[Notes & Homework](https://github.com/crushedmonster/mlops-zoomcamp/tree/main/1-intro)
+[Notes & Homework](https://github.com/crushedmonster/mlops-zoomcamp/tree/main/01-intro)
 
 ## [Module 2: Experiment tracking](https://github.com/DataTalksClub/mlops-zoomcamp/blob/main/02-experiment-tracking)
 - Experiment tracking intro
