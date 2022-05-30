@@ -48,12 +48,19 @@ Along with this information, MLflow automatically logs extra information about t
 ### Getting started with MLFlow
 In the virtual conda environment created previously in [module 1](https://github.com/crushedmonster/mlops-zoomcamp/tree/main/01-intro), install the package with `conda`:
 
-```
+```sh
 conda install -c conda-forge mlflow
 ```
 
-To install the package with `pip`, run:
+To install the package with `pip`, simply run:
 
-```
+```sh
 pip install mlflow
+```
+
+### MLflow UI
+To run the MLflow UI locally we can run the following the command:
+
+```sh
+mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
