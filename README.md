@@ -21,6 +21,8 @@ Free MLOps course from [DataTalks.Club](https://datatalks.club/)
 - MLflow in practice
 - Homework
 
+[Notes & Homework](https://github.com/crushedmonster/mlops-zoomcamp/tree/main/02-experiment-tracking)
+
 ## Module 3: Orchestration and ML Pipelines
 - ML Pipelines: introduction
 - Prefect
