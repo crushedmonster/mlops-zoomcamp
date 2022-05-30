@@ -64,3 +64,4 @@ To run the MLflow UI locally we can run the following the command:
 ```sh
 mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
+The UI should accessible via: http://localhost:5000/ .
