@@ -44,3 +44,16 @@ Along with this information, MLflow automatically logs extra information about t
 - Verson of the code (git commit)
 - Start and end time
 - Author
+
+### Getting started with MLFlow
+In the virtual conda environment created previously in [module 1](https://github.com/crushedmonster/mlops-zoomcamp/tree/main/01-intro), install the package with `conda`:
+
+```
+conda install -c conda-forge mlflow
+```
+
+To install the package with `pip`, run:
+
+```
+pip install mlflow
+```
