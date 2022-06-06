@@ -101,7 +101,56 @@ with mlflow.start_run():
  To log information about a run, we can set tags associated to it. One example of could be the name of the developer :
  
  ```python
- # set tag for mlflow
+# set tag for mlflow
 mlflow.set_tag("developer", "Wenna")
  ```
 This will be useful when working in a big team or useful to find some runs from a specific person.
+
+To log information about which datasets were used for the run, we can simply pass the data path of the dataset using log_params.
+
+```python
+# log information about the datasets used
+mlflow.log_param("train-data-path", "./data/green_tripdata_2021-01.parquet")
+mlflow.log_param("valid-data-path", "./data/green_tripdata_2021-02.parquet")
+```
+
+In addition, we can also use log_params to log information about the hyperparameters used during model training.
+
+```python
+# log the hyperparameter alpha (for training a LASSO model)
+alpha = 0.01
+mlflow.log_param("alpha", alpha)
+```
+
+To keep track on the performance of the model, we can simply pass the metric of interest using log_metric. Eg. We are interested to monitor the RMSE score of the model:
+
+```python
+# calculate and log RMSE score
+rmse = mean_squared_error(y_val, y_pred, squared=False)
+mlflow.log_metric("rmse", rmse)
+```
+
+Finally, putting it altogether:
+
+```python
+with mlflow.start_run():
+    # set tag for mlflow
+    mlflow.set_tag("developer", "Wenna")
+    
+    # log information about the datasets used
+    mlflow.log_param("train-data-path", "./data/green_tripdata_2021-01.parquet")
+    mlflow.log_param("valid-data-path", "./data/green_tripdata_2021-02.parquet")
+    
+    # log the hyperparameter alpha
+    alpha = 0.01
+    mlflow.log_param("alpha", alpha)
+    lr = Lasso(alpha)
+    lr.fit(X_train, y_train)
+    
+    y_pred = lr.predict(X_val)
+    # calculate and log RMSE score
+    rmse = mean_squared_error(y_val, y_pred, squared=False)
+    mlflow.log_metric("rmse", rmse)
+```
+
+If we go to MLFlow UI, we should see that our new run has been recorded (click "refresh" if it did not show up).
