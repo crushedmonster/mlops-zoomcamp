@@ -213,3 +213,45 @@ best_result = fmin(
     trials=Trials()
 )
 ```
+
+### Automatic Logging in MLFlow
+Instead of explicitly specifying what to log, we can use [MLFlow's autolog function](https://www.mlflow.org/docs/latest/tracking.html#automatic-logging).
+
+The following libraries support autologging:
+- Scikit-learn
+- TensorFlow and Keras
+- Gluon
+- XGBoost
+- LightGBM
+- Statsmodels
+- Spark
+- Fastai
+- Pytorch
+
+Here’s a short xgboost autolog example that makes use of this function:
+
+```python
+# Call mlflow.xgboost.autolog() before your training code to enable automatic logging of metrics and parameters.
+mlflow.xgboost.autolog()
+
+# best params found using hyperopt
+params = {
+    'learning_rate': 0.20472169880371677,
+    'max_depth': 17,
+    'min_child_weight': 1.2402611720043835,
+    'objective': 'reg:linear',
+    'reg_alpha': 0.28567896734700793,
+    'reg_lambda': 0.004264404814393109,
+    'seed': 42
+}
+
+booster = xgb.train(
+            params=params,
+            dtrain=train,
+            num_boost_round=1000,
+            evals=[(valid, 'validation')],
+            early_stopping_rounds=50
+        )
+```
+
+Automatic logging allows us to log metrics, parameters, and artifacts without the need for explicit log statements.
