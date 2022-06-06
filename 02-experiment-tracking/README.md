@@ -67,3 +67,41 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 The backend storage is essential to access the features of MLflow. Here, we're telling mlflow that we want to store all the artifacts and metadata in SQLite, which is one of the alternatives for the backend store.
 
 The UI should accessible via: http://localhost:5000/ .
+
+### Running MLFlow in Jupyter Notebook
+To import MLflow, simply just import the library:
+
+```python
+import mlflow
+```
+
+Next, we'll also need to set tracking URI. This is needed because we are running MLFlow with the sqlite backend.
+
+```python
+ mlflow.set_tracking_uri("sqlite:///mlflow.db")
+ ```
+ 
+ We'll also need to set the experiment. 
+ 
+ ```python
+ mlflow.set_experiment("my-branch-new-experiment")
+ ```
+ 
+MLFlow will check if this experiment exists, and if it doesn't exist it will create the experiment and then assign all the runs to that experiment.
+If the experiment already exists, MLFlow will just append the runs to this existing experiment.
+
+To start tracking our runs, we'll need to define the run with mlflow.start_run(). 
+
+```python
+# to track the run with mlflow
+with mlflow.start_run():
+    ...
+ ```
+ 
+ To log information about a run, we can set tags associated to it. One example of could be the name of the developer :
+ 
+ ```python
+ # set tag for mlflow
+mlflow.set_tag("developer", "Wenna")
+ ```
+This will be useful when working in a big team or useful to find some runs from a specific person.
