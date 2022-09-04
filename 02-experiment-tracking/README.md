@@ -302,7 +302,7 @@ with mlflow.start_run():
     # log the model
     # mlflow.<framework>.log_model(model, artifact_path)
     # replace the <framework> wih our model's framework (eg. sklearn, xgboost...etc)
-    mlflow.xgboost.log_model(booster, artifact_path="models_mlflow)
+    mlflow.xgboost.log_model(booster, artifact_path="models_mlflow")
 ```
 
 ### Loading MLFlow models
