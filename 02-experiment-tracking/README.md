@@ -304,3 +304,10 @@ with mlflow.start_run():
     # replace the <framework> wih our model's framework (eg. sklearn, xgboost...etc)
     mlflow.xgboost.log_model(booster, artifact_path="models_mlflow)
 ```
+
+### Loading MLFlow models
+As shown within the MLFlow UI, there are various ways in which we can load the models saved in MLFlow.
+
+[<img src="./assets/loading_mlflow_model.PNG" width="550"/>](./assets/loading_mlflow_model.PNG)
+
+MLFlow identifies the model saved by run id.
