@@ -305,8 +305,8 @@ with mlflow.start_run():
     mlflow.xgboost.log_model(booster, artifact_path="models_mlflow")
 ```
 
-### Loading MLFlow models
-As shown within the MLFlow UI, there are various ways in which we can load the models saved in MLFlow.
+### Loading MLFlow model
+As shown within the MLFlow UI, there are various ways in which we can load the model saved in MLFlow.
 
 [<img src="./assets/loading_mlflow_model.PNG" width="550"/>](./assets/loading_mlflow_model.PNG)
 
