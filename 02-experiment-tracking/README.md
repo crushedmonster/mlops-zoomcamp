@@ -255,3 +255,52 @@ booster = xgb.train(
 ```
 
 Automatic logging allows us to log metrics, parameters, and artifacts without the need for explicit log statements.
+
+### Manually save the model as an artifact in MLFlow
+To manually save a model as an artifact in MLFlow, we need to call:
+```python
+mlflow.log_artifact(local_path="models/lin_reg.bin", artifact_path="models_pickle/") 
+```
+This method takes a local path and an artifact path as inputs. Local path is the location of the artifact, in this case it's the model. Artifact path is the location in which MLFlow will save the model.
+
+### Alternate way of saving model in MLFlow
+Alternatively, there is an easier way to save a model after every run. The following example shows how we can save a model after a run.
+
+```python
+# using the same code to train the XGBoost and the best params found using hyperopt
+
+with mlflow.start_run():
+
+    best_params = {
+    'learning_rate': 0.20472169880371677,
+    'max_depth': 17,
+    'min_child_weight': 1.2402611720043835,
+    'objective': 'reg:linear',
+    'reg_alpha': 0.28567896734700793,
+    'reg_lambda': 0.004264404814393109,
+    'seed': 42
+    }
+    
+    # log the paramters: pass the dictionary with all the params 
+    # note: log_params is the plural version of log_param.
+    # instead of passing the param one by one, log_params allows us to pass the dictionary with all the params 
+    mlflow.log_params(best_params)
+    
+    booster = xgb.train(
+            params=params,
+            dtrain=train,
+            num_boost_round=1000,
+            evals=[(valid, 'validation')],
+            early_stopping_rounds=50
+        )
+        
+    y_pred = booster.predict(X_val)
+    # calculate and log RMSE score
+    rmse = mean_squared_error(y_val, y_pred, squared=False)
+    mlflow.log_metric("rmse", rmse)
+    
+    # log the model
+    # mlflow.<framework>.log_model(model, artifact_path)
+    # replace the <framework> wih our model's framework (ex: sklearn, xgboost...etc)
+    mlflow.xgboost.log_model(booster, artifact_path="models_mlflow)
+```
