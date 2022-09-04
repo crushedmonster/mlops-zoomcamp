@@ -71,4 +71,4 @@ MLOps is a set of best practices to put machine learning models into production.
 Reference: [Machine Learning operations maturity model - Microsoft Docs](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/mlops/mlops-maturity-model)
 
 ## Homework
-My solution can be found here: [homework.ipynb](https://github.com/crushedmonster/mlops-zoomcamp/blob/main/1-intro/homework.ipynb)
+My solution can be found here: [homework.ipynb](https://github.com/crushedmonster/mlops-zoomcamp/blob/main/01-intro/homework.ipynb)
