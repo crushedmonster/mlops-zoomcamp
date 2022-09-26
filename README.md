@@ -23,12 +23,14 @@ Free MLOps course from [DataTalks.Club](https://datatalks.club/)
 
 [Notes & Homework](https://github.com/crushedmonster/mlops-zoomcamp/tree/main/02-experiment-tracking)
 
-## Module 3: Orchestration and ML Pipelines
+## [Module 3: Orchestration and ML Pipelines](https://github.com/DataTalksClub/mlops-zoomcamp/tree/main/03-orchestration)
 - ML Pipelines: introduction
 - Prefect
 - Turning a notebook into a pipeline
 - Kubeflow Pipelines
 - Homework
+
+[Notes & Homework](https://github.com/crushedmonster/mlops-zoomcamp/tree/main/03-orchestration)
 
 ## Module 4: Model Deployment
 - Batch vs online
