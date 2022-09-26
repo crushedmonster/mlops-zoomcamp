@@ -325,3 +325,7 @@ It provides:
 
 ## Alternatives
 Link: https://neptune.ai/blog/best-ml-experiment-tracking-tools
+
+
+## Homework
+My solution can be found here: [homework.ipynb](https://github.com/crushedmonster/mlops-zoomcamp/blob/main/02-experiment-tracking/homework/homework.ipynb)
