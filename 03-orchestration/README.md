@@ -10,7 +10,7 @@ For example, if you have a machine learning pipeline that you want to run every 
 
 Example of a Machine Learning Pipeline:
 ```
-PostgresQL → Parquet 
+PostgreSQL → Parquet 
               ↓ 
 Rest API →  Pandas → Sklearn → mlflow
                         ↓
