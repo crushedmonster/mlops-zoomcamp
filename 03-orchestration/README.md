@@ -18,3 +18,5 @@ Rest API →  Pandas → Sklearn → mlflow
 ```
 
 In general, random points of failure can occur within the pipeline. The goal of the workflow orchestration is to both minimize the errors and to fail gracefully if it happens.
+
+As we look at more interconnected pipelines, there are more places that things can fail because there's alot more activity going on. So, it is important to have some failure mechanism to deal with it, or if a step fails we can still run other steps. Workflow orchestration also dictates whether we want downstream tasks to run or not.
