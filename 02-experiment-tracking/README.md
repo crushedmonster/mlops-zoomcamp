@@ -311,3 +311,12 @@ As shown within the MLFlow UI, there are various ways in which we can load the m
 [<img src="./assets/loading_mlflow_model.PNG" width="550"/>](./assets/loading_mlflow_model.PNG)
 
 MLFlow identifies the model saved by run id.
+
+
+## Model Registry
+The Model Registry component is a centralised model store, set of APIs, and a UI, to collaboratively manage the full lifecycle of a MLFlow model.
+It provides:
+- Model lineage,
+- Model versioning,
+- Stage transitions, and
+- Annotations
